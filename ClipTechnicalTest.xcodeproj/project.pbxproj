@@ -18,6 +18,7 @@
 		125A6EE62C1109AE009B7F55 /* PostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125A6EE52C1109AE009B7F55 /* PostData.swift */; };
 		125A6EE82C1109D5009B7F55 /* RedditTopPostsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125A6EE72C1109D5009B7F55 /* RedditTopPostsPresenter.swift */; };
 		125A6EEB2C110A0D009B7F55 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125A6EEA2C110A0D009B7F55 /* NetworkError.swift */; };
+		125A6EEE2C114121009B7F55 /* pepe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125A6EED2C114121009B7F55 /* pepe.swift */; };
 		77A400002B571AA100528074 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A4FFFF2B571AA100528074 /* SceneDelegate.swift */; };
 		77A400022B571AA100528074 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A400012B571AA100528074 /* ViewController.swift */; };
 		77A400052B571AA100528074 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77A400032B571AA100528074 /* Main.storyboard */; };
@@ -62,6 +63,8 @@
 		125A6EE52C1109AE009B7F55 /* PostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostData.swift; sourceTree = "<group>"; };
 		125A6EE72C1109D5009B7F55 /* RedditTopPostsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditTopPostsPresenter.swift; sourceTree = "<group>"; };
 		125A6EEA2C110A0D009B7F55 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		125A6EED2C114121009B7F55 /* pepe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pepe.swift; sourceTree = "<group>"; };
+		125A6EF02C1141E5009B7F55 /* ClipTechnicalTestTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = ClipTechnicalTestTests.xctestplan; sourceTree = "<group>"; };
 		77A400012B571AA100528074 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		77A400042B571AA100528074 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		77A400062B571AA400528074 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -167,6 +170,7 @@
 				77A4002D2B571B4500528074 /* DiagonalMatrix.tests.swift */,
 				77A4002E2B571B4500528074 /* SherlockAndValidString.tests.swift */,
 				77A400142B571AA400528074 /* ClipTechnicalTestTests.swift */,
+				125A6EED2C114121009B7F55 /* pepe.swift */,
 			);
 			path = ClipTechnicalTestTests;
 			sourceTree = "<group>";
@@ -183,6 +187,7 @@
 		77A4FFF12B571AA100528074 = {
 			isa = PBXGroup;
 			children = (
+				125A6EF02C1141E5009B7F55 /* ClipTechnicalTestTests.xctestplan */,
 				77A4FFFC2B571AA100528074 /* ClipTechnicalTest */,
 				77A400132B571AA400528074 /* ClipTechnicalTestTests */,
 				77A4001D2B571AA400528074 /* ClipTechnicalTestUITests */,
@@ -354,6 +359,7 @@
 				77A4002F2B571B4500528074 /* DiagonalMatrix.tests.swift in Sources */,
 				77A400152B571AA400528074 /* ClipTechnicalTestTests.swift in Sources */,
 				77A400302B571B4500528074 /* SherlockAndValidString.tests.swift in Sources */,
+				125A6EEE2C114121009B7F55 /* pepe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

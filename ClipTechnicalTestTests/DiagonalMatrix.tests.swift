@@ -22,6 +22,6 @@ class MiniMaxSum_tests: XCTestCase {
     func test_minimax2(){
         let minimax = MiniMaxSum()
         let result = minimax.miniMaxSum(arr: [5,1,9,20,12])
-        XCTAssertEqual("2063136757 2744467344", result)
+        XCTAssertEqual("27 46", result)
     }
 }

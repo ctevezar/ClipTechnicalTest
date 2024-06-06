@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "E2DE0EB0-9DED-44D1-9FCF-2B2EF3C9BA58",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:ClipTechnicalTest.xcodeproj",
+        "identifier" : "77A4000F2B571AA400528074",
+        "name" : "ClipTechnicalTestTests"
+      }
+    }
+  ],
+  "version" : 1
+}

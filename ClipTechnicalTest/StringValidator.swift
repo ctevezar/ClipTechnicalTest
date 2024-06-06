@@ -14,12 +14,16 @@ final class StringValidator {
     
     private func validate(s: String) -> Bool {
         let characters = Set(s) // Hago un array con los elementos sin repetir
-        var charRepeat = count(char: characters.first, in: s)
+        let charRepeat = count(char: characters.first, in: s)
         
         for character in characters {
             let count = count(char: character, in: s)
+            let countMinusOne = count - 1
 
-            if charRepeat != count && charRepeat != count - 1 {
+            let isCountDifferentFromCharRepeat = charRepeat != count
+            let isCharRepeatDifferentFromCountMinusOneAndNotZero = charRepeat != countMinusOne && countMinusOne != 0
+
+            if isCountDifferentFromCharRepeat && isCharRepeatDifferentFromCountMinusOneAndNotZero {
                return false
             }
         }
