@@ -13,24 +13,25 @@ protocol RedditTopPostsBusinessLogic {
 }
 
 protocol RedditTopPostsDataStore {
-    var posts: RedditResponse? { get }
+    var posts: [Post]? { get }
 }
 
 class RedditTopPostsInteractor: RedditTopPostsBusinessLogic, RedditTopPostsDataStore {
     var presenter: RedditTopPostsPresentationLogic = RedditTopPostsPresenter()
-    var worker: RedditServiceProtocol = RedditService()
-    var posts: RedditResponse?
+    var worker: RedditWorkerLogic = RedditWorker()
+    var posts: [Post]?
     
     func fetchTopPosts() {
         Task {
             do {
                 let result = try await worker.fetchTopPosts()
                 self.posts = result
-                self.presenter.presentFetched(posts: result)
+                let response = Reddit.FetchTopPosts.Response(posts: result)
+
+                self.presenter.presentFetched(posts: response)
             } catch let error {
                 print(error.localizedDescription.description)
             }
         }
-        
     }
 }

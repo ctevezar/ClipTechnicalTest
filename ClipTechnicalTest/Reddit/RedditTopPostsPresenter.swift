@@ -5,41 +5,46 @@
 //  Created by Carlos Tevez on 05/06/2024.
 //
 
-import Foundation
+import UIKit
 
 protocol RedditTopPostsPresentationLogic {
-    func presentFetched(posts: RedditResponse?)
+    func presentFetched(posts: Reddit.FetchTopPosts.Response)
 }
 
 class RedditTopPostsPresenter: RedditTopPostsPresentationLogic {
-    func presentFetched(posts: RedditResponse?) {
-        let titles = getTitles(from: posts)
-        let list = toList(bullet: "•", elements: titles)
+    weak var viewController: HomeDisplayLogic?
+    
+    func presentFetched(posts: Reddit.FetchTopPosts.Response) {
+        let displayedPosts = getTitles(from: posts.posts)
+        let viewModel = Reddit.FetchTopPosts.ViewModel(displayedPosts: displayedPosts)
         
-        // TODO: Esto podria llamar al VC para enviarle la data.
-        print(list)
+        viewController?.displayPosts(viewModel: viewModel)
     }
     
-    private func getTitles(from posts: RedditResponse?) -> [String] {
-        guard let posts = posts?.data.children
+    private func getTitles(from posts: [Post]?) -> [Reddit.FetchTopPosts.ViewModel.DisplayedPost] {
+        guard let posts = posts
         else { return [] }
         
-        var titles = [String]()
+        var displayedPosts = [Reddit.FetchTopPosts.ViewModel.DisplayedPost]()
         
         for post in posts {
-            titles.append(post.data.title)
+            
+            let displayedPost = Reddit.FetchTopPosts.ViewModel.DisplayedPost(title: post.title,
+                                                                             imageUrl: getUrl(from: post.thumbnailUrl),
+                                                                             subreddit: post.subreddit)
+            
+            displayedPosts.append(displayedPost)
         }
         
-        return titles
+        return displayedPosts
     }
     
-    private func toList(bullet: Character, elements: [String]) -> String {
-        var result = ""
+    private func getUrl(from urlString: String?) -> URL? {
+        guard let urlString = urlString
+        else { return nil }
         
-        for element in elements {
-            result += "\(bullet) \(element) \n"
-        }
+        let url = urlString.replacingOccurrences(of: "&amp;", with: "&")
         
-        return result
+        return URL(string: url)
     }
 }
